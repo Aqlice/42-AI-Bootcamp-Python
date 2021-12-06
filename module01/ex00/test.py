@@ -1,0 +1,22 @@
+from book import Book
+from recipe import Recipe
+
+my_book = Book("Mon livre de recettes\n")
+print(my_book.name)
+pizza = Recipe("pizza", 4, 30, "farine, eau, sauce tomate, fromage", 'lunch', "pretty good italian lunch")
+print("avant")
+print(pizza)
+foccaccia = Recipe("foccaccia", 3, 60, "farine, eau, sel, huile d'olive", 'dessert', "pretty good italian dessert")
+croquant = Recipe("croquant au chocolat", 1, 15, "pralins, chocolat, crepes dentelles", "dessert", "ca croustille dans ta bouche")
+my_book.add_recipe(pizza)
+my_book.add_recipe(foccaccia)
+my_book.add_recipe(croquant)
+dessert_list = my_book.get_recipes_by_types('dessert')
+lunch_list = my_book.get_recipes_by_types('lunch')
+starter_list = my_book.get_recipes_by_types('starter')
+print(f'dessert list\n{dessert_list}\n')
+print(f'lunch list\n{lunch_list}\n')
+print(f'starter list\n{starter_list}\n')
+my_book.get_recipe_by_name(croquant)
+my_book.get_recipe_by_name(pizza)
+my_book.get_recipe_by_name(foccaccia)
